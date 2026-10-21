@@ -1,176 +1,77 @@
 <!doctype html>
 <html lang="fi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#2878d4">
-<title>Kertotaulupeli – nopeushaaste</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#6258e8">
+<title>Kertotaulumestari – kertotaulupeli</title>
 <style>
-:root{color-scheme:light;--blue:#2878d4;--ink:#192536;--muted:#64748b;--line:#dce4ee;--panel:#f2f6fb;--green:#18864b;--red:#c53636}
-*{box-sizing:border-box}
-body{margin:0;background:#f4f7fb;color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-main{width:min(100% - 28px,620px);margin:28px auto 48px}
-.card{background:white;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 8px 26px #243b530b}
-h1,h2,p{margin-top:0}h1{font-size:clamp(1.6rem,5vw,2.15rem);margin-bottom:6px}h2{font-size:1.2rem}
-.sub{color:var(--muted);line-height:1.5}.center{text-align:center}
-label{display:block;font-weight:700;margin:18px 0 8px}
-input,select{width:100%;font:inherit;padding:12px;border:1px solid #bdcadb;border-radius:11px;background:white;color:var(--ink)}
-button{font:inherit;cursor:pointer}
-.primary,.secondary{width:100%;padding:13px 16px;border-radius:12px;font-weight:750}
-.primary{background:var(--blue);border:1px solid var(--blue);color:white}
-.secondary{background:white;border:1px solid var(--line);color:var(--ink)}
-button:disabled{opacity:.55;cursor:not-allowed}
-.hidden{display:none!important}
-.hero-icon{font-size:48px;margin-bottom:4px}
-.info{background:var(--panel);border-radius:12px;padding:12px;font-size:.92rem;line-height:1.45}
-.row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.pill{border-radius:12px;background:var(--panel);padding:9px 13px;text-align:center;min-width:82px}
-.pill small{display:block;color:var(--muted)}
-.pill strong{font-size:1.45rem}
-.progress{height:9px;background:#e5eaf1;border-radius:9px;overflow:hidden;margin:14px 0}
-#timebar{height:100%;width:100%;background:var(--green);transition:width .15s linear}
-.question{font-size:clamp(2.3rem,9vw,3.4rem);font-weight:850;text-align:center;padding:26px 8px}
-#answerDisplay{min-height:62px;border:2px solid var(--line);border-radius:14px;text-align:center;font-size:2rem;font-weight:800;padding:8px;margin-bottom:12px}
-.pad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.key{min-height:52px;border:1px solid var(--line);background:white;color:var(--ink);border-radius:12px;font-size:1.3rem;font-weight:750}
-.key:active{background:#eaf2ff}
-.feedback{min-height:27px;text-align:center;font-weight:750;margin:10px 0}
-#leaderboard{margin-top:12px}
-.record-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 12px;border-radius:10px;background:var(--panel);margin:6px 0;align-items:center}
-.record-row strong{font-variant-numeric:tabular-nums}
-small,.small{font-size:.85rem;color:var(--muted)}
-footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:18px}
-@media(max-width:420px){.card{padding:17px}main{width:min(100% - 18px,620px);margin-top:10px}}
-</style>
-</head>
-<body>
-<main>
+:root{color-scheme:light;--blue:#6258e8;--ink:#192536;--muted:#64748b;--line:#dce4ee;--panel:#f2f3ff;--green:#18864b;--red:#c53636;--gold:#f3b63f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#e7e8ff 0,#f4f7fb 48%);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+main{width:min(100% - 22px,650px);margin:18px auto 40px}.card{background:white;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 8px 30px #243b5310}
+h1,h2,p{margin-top:0}h1{font-size:clamp(1.7rem,5vw,2.3rem);margin-bottom:6px}h2{font-size:1.15rem}.sub{color:var(--muted);line-height:1.5}.center{text-align:center}
+label{display:block;font-weight:700;margin:16px 0 8px}input,select{width:100%;font:inherit;padding:12px;border:1px solid #bdcadb;border-radius:12px;background:white;color:var(--ink)}button{font:inherit;cursor:pointer}
+.primary,.secondary{width:100%;padding:13px 16px;border-radius:13px;font-weight:800}.primary{background:var(--blue);border:1px solid var(--blue);color:white}.secondary{background:white;border:1px solid var(--line);color:var(--ink)}button:disabled{opacity:.55;cursor:not-allowed}.hidden{display:none!important}
+.hero-icon{font-size:48px;margin-bottom:4px}.info{background:var(--panel);border-radius:13px;padding:12px;font-size:.92rem;line-height:1.45}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pill{border-radius:12px;background:var(--panel);padding:8px 12px;text-align:center;min-width:76px}.pill small{display:block;color:var(--muted)}.pill strong{font-size:1.35rem}
+.progress{height:9px;background:#e5eaf1;border-radius:9px;overflow:hidden;margin:12px 0}.timebar{height:100%;width:100%;background:var(--green);transition:width .15s linear}
+.question{font-size:clamp(2.5rem,10vw,3.7rem);font-weight:900;text-align:center;padding:20px 8px;transition:transform .16s}@keyframes pop{50%{transform:scale(1.04)}}.pop{animation:pop .22s ease}
+#answerDisplay{min-height:62px;border:2px solid var(--line);border-radius:14px;text-align:center;font-size:2rem;font-weight:850;padding:8px;margin-bottom:12px}.pad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.key{min-height:52px;border:1px solid var(--line);background:white;color:var(--ink);border-radius:12px;font-size:1.3rem;font-weight:750}.key:active{background:#eaf2ff}
+.feedback{min-height:27px;text-align:center;font-weight:800;margin:10px 0}.dashboard{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.statbox{padding:13px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(135deg,#fff,#f3f2ff)}.statbox strong{display:block;font-size:1.35rem}
+.xpbar{height:8px;background:#e4e5ef;border-radius:99px;overflow:hidden;margin-top:8px}.xpfill{height:100%;width:0;background:linear-gradient(90deg,#6258e8,#a78bfa);transition:width .3s}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.badge{font-size:.8rem;border-radius:99px;background:#fff3cf;color:#78540a;padding:6px 9px;border:1px solid #f5dda0}.daily{border:1px solid #d8d4ff;background:linear-gradient(120deg,#f2f0ff,#fff);border-radius:14px;padding:13px;margin:14px 0}
+.small,small{font-size:.85rem;color:var(--muted)}.record-row{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:10px;background:var(--panel);margin:6px 0}.record-row strong{font-variant-numeric:tabular-nums}footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:18px}
+@media(max-width:420px){.card{padding:16px}main{margin-top:9px}}
+</style></head>
+<body><main>
 <section id="home" class="card">
- <div class="center">
-  <div class="hero-icon" aria-hidden="true">🧮</div>
-  <h1>Kertotaulupeli</h1>
-  <p class="sub">10 laskua · 2 minuuttia · nopein täydellinen tulos voittaa!</p>
- </div>
- <label for="playerName">Pelaajan nimi (1–20 merkkiä)</label>
- <input id="playerName" maxlength="20" autocomplete="nickname" placeholder="Esim. Aino">
- <label for="mode">Valitse pelitapa</label>
- <select id="mode">
-  <option value="mixed">🎲 Kaikki kertotaulut sekaisin</option>
-  <option value="1">1:n kertotaulu</option><option value="2">2:n kertotaulu</option>
-  <option value="3">3:n kertotaulu</option><option value="4">4:n kertotaulu</option>
-  <option value="5">5:n kertotaulu</option><option value="6">6:n kertotaulu</option>
-  <option value="7">7:n kertotaulu</option><option value="8">8:n kertotaulu</option>
-  <option value="9">9:n kertotaulu</option><option value="10">10:n kertotaulu</option>
- </select>
- <button id="start" class="primary" style="margin-top:16px">Aloita peli 🚀</button>
- <p class="small" style="margin:10px 0 0">Ennätys hyväksytään vain, jos kaikki 10 vastausta ovat oikein.</p>
- <div style="margin-top:24px">
-  <h2>🏆 Yhteinen ennätyslista</h2>
-  <p class="sub small">Näet kaikkien pelaajien parhaat ajat, kun tietokanta on yhdistetty.</p>
-  <div id="leaderboard" aria-live="polite"><p class="info">Yhteistä tuloslistaa ei ole vielä yhdistetty. Peli toimii silti, ja tuloksen voi nähdä pelin lopussa.</p></div>
- </div>
+<div class="center"><div class="hero-icon">🧮</div><h1>Kertotaulumestari</h1><p class="sub">Ratko laskut, kerää XP:tä, avaa saavutuksia ja nouse tasolta toiselle.</p></div>
+<div class="daily"><strong>⚡ Päivän haaste</strong><div id="dailyText" class="small">Saa vähintään 8/10 oikein ja ansaitse bonus-XP:tä.</div></div>
+<label for="playerName">Pelaajan nimi</label><input id="playerName" maxlength="20" autocomplete="nickname" placeholder="Esim. Aino">
+<label for="mode">Valitse pelitapa</label><select id="mode"><option value="mixed">🎲 Kaikki kertotaulut sekaisin</option><option value="1">1:n kertotaulu</option><option value="2">2:n kertotaulu</option><option value="3">3:n kertotaulu</option><option value="4">4:n kertotaulu</option><option value="5">5:n kertotaulu</option><option value="6">6:n kertotaulu</option><option value="7">7:n kertotaulu</option><option value="8">8:n kertotaulu</option><option value="9">9:n kertotaulu</option><option value="10">10:n kertotaulu</option></select>
+<button id="start" class="primary" style="margin-top:14px">Aloita peli 🚀</button>
+<div class="dashboard"><div class="statbox"><span class="small">Taso</span><strong id="levelValue">1</strong><span id="levelName" class="small">Aloittelija</span></div><div class="statbox"><span class="small">Kokemus</span><strong><span id="xpValue">0</span> XP</strong><div class="xpbar"><div id="xpFill" class="xpfill"></div></div><span id="nextLevel" class="small">100 XP seuraavaan tasoon</span></div></div>
+<strong>🎖️ Saavutukset</strong><div id="badges" class="badges"></div>
+<div style="margin-top:24px"><h2>🏆 Omat ennätykset</h2><p class="small">Tallennetaan tähän selaimeen.</p><div id="leaderboard"></div></div>
+<p class="small" style="margin-top:16px">10 kysymystä · 2 minuuttia · täydellinen tulos vaaditaan ennätykseen.</p>
 </section>
-
 <section id="game" class="card hidden">
- <div class="row">
-  <div><h2 id="gameTitle" style="margin-bottom:4px">Kertotaulupeli</h2><div class="small" id="progress">Kysymys 1 / 10</div></div>
-  <div class="pill"><small>Oikein</small><strong id="score">0</strong></div>
- </div>
- <div style="margin-top:16px">
-  <div class="row"><strong>⏱️ Aikaa jäljellä</strong><strong id="clock">2:00</strong></div>
-  <div class="progress"><div id="timebar"></div></div>
- </div>
- <div id="question" class="question">9 × 3 = ?</div>
- <div id="answerDisplay" aria-live="polite">_</div>
- <div class="pad" id="keypad">
-  <button class="key" data-digit="1">1</button><button class="key" data-digit="2">2</button><button class="key" data-digit="3">3</button>
-  <button class="key" data-digit="4">4</button><button class="key" data-digit="5">5</button><button class="key" data-digit="6">6</button>
-  <button class="key" data-digit="7">7</button><button class="key" data-digit="8">8</button><button class="key" data-digit="9">9</button>
-  <button class="key" data-action="clear" style="font-size:.9rem">Tyhjennä</button><button class="key" data-digit="0">0</button><button class="key" data-action="back" aria-label="Poista viimeinen numero">⌫</button>
- </div>
- <button id="submit" class="primary" style="margin-top:12px">Vastaa ↵</button>
- <div id="feedback" class="feedback" aria-live="polite"></div>
- <button id="quit" class="secondary">Lopeta peli</button>
- <p class="small" style="margin:12px 0 0">Voit käyttää myös laitteen omaa näppäimistöä ja Enter-näppäintä.</p>
+<div class="row"><div><h2 id="gameTitle" style="margin-bottom:4px">Kertotaulupeli</h2><div class="small" id="progress">Kysymys 1 / 10</div></div><div style="display:flex;gap:8px"><div class="pill"><small>Oikein</small><strong id="score">0</strong></div><div class="pill"><small>Combo</small><strong id="combo">0×</strong></div></div></div>
+<div style="margin-top:16px"><div class="row"><strong>⏱️ Aikaa jäljellä</strong><strong id="clock">2:00</strong></div><div class="progress"><div id="timebar" class="timebar"></div></div></div>
+<div id="question" class="question">9 × 3 = ?</div><div id="answerDisplay" aria-live="polite">_</div>
+<div class="pad" id="keypad"><button class="key" data-digit="1">1</button><button class="key" data-digit="2">2</button><button class="key" data-digit="3">3</button><button class="key" data-digit="4">4</button><button class="key" data-digit="5">5</button><button class="key" data-digit="6">6</button><button class="key" data-digit="7">7</button><button class="key" data-digit="8">8</button><button class="key" data-digit="9">9</button><button class="key" data-action="clear" style="font-size:.9rem">Tyhjennä</button><button class="key" data-digit="0">0</button><button class="key" data-action="back" aria-label="Poista viimeinen numero">⌫</button></div>
+<button id="submit" class="primary" style="margin-top:12px">Vastaa ↵</button><div id="feedback" class="feedback" aria-live="polite"></div><button id="quit" class="secondary">Lopeta peli</button><p class="small" style="margin:12px 0 0">Voit käyttää myös laitteen näppäimistöä ja Enter-näppäintä.</p>
 </section>
-
-<section id="result" class="card hidden center">
- <div id="resultIcon" class="hero-icon">🏆</div>
- <h1 id="resultTitle">Peli valmis!</h1>
- <div id="finalScore" style="font-size:2.7rem;font-weight:850">0 / 10</div>
- <p id="elapsed" class="sub"></p>
- <p id="resultMessage"></p>
- <p id="saveStatus" class="info"></p>
- <button id="again" class="primary">Pelaa uudelleen</button>
- <button id="backHome" class="secondary" style="margin-top:9px">Takaisin alkuun</button>
-</section>
-<footer>Kertotaulupeli · Harjoittele ja paranna aikaasi!</footer>
-</main>
+<section id="result" class="card hidden center"><div id="resultIcon" class="hero-icon">🏆</div><h1 id="resultTitle">Peli valmis!</h1><div id="finalScore" style="font-size:2.7rem;font-weight:900">0 / 10</div><p id="elapsed" class="sub"></p><p id="resultMessage"></p><p id="xpEarned" class="info"></p><p id="saveStatus" class="info"></p><button id="again" class="primary">Pelaa uudelleen</button><button id="backHome" class="secondary" style="margin-top:9px">Takaisin alkuun</button></section>
+<footer>Kertotaulumestari · Harjoittele, kerää kokemusta ja kehity!</footer></main>
 <script>
-/*
-  OPTIONAL SHARED LEADERBOARD SETUP:
-  1. Create a Supabase project.
-  2. Create a secure Edge Function that validates and stores results.
-  3. Set SUBMIT_ENDPOINT below to that function URL.
-  Never put a Supabase service_role/secret key in this public HTML file.
-*/
-const SUBMIT_ENDPOINT = ""; // e.g. "https://YOUR_PROJECT.supabase.co/functions/v1/submit-score"
-const $ = id => document.getElementById(id);
-const home=$('home'), game=$('game'), result=$('result');
-let mode='mixed', name='', questions=[], index=0, score=0, entry='', locked=false, active=false, startTime=0, deadline=0, timer=null, elapsedMs=0;
-const localKey='kertotaulupeli_local_records_v1';
+const $=id=>document.getElementById(id),home=$('home'),game=$('game'),result=$('result');
+let mode='mixed',name='',questions=[],index=0,score=0,entry='',locked=false,active=false,startTime=0,deadline=0,timer=null,elapsedMs=0,streak=0,bestStreak=0,earnedXP=0;
+const recordKey='kertotaulupeli_local_records_v1',profileKey='kertotaulumestari_profile_v1';
+const levelNames=['Aloittelija','Harjoittelija','Laskija','Nopea tekijä','Kertotaulun taitaja','Kertotaulumestari'];
+const achievementDefs=[['first','Ensimmäinen peli','Pelaa ensimmäinen peli'],['perfect','Täydellinen','10/10 oikein'],['combo5','Combo x5','Viisi oikeaa putkeen'],['speed','Salamannopea','10/10 alle 30 sekunnissa'],['xp500','Kokemus karttuu','Kerää 500 XP']];
 function show(section){[home,game,result].forEach(s=>s.classList.toggle('hidden',s!==section));}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function modeName(m){return m==='mixed'?'Kaikki sekaisin':m+':n kertotaulu';}
-function formatTime(ms){const cs=Math.floor(ms/10)%100, s=Math.floor(ms/1000)%60, m=Math.floor(ms/60000);return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+String(cs).padStart(2,'0');}
-function readLocal(){try{return JSON.parse(localStorage.getItem(localKey)||'{}')||{};}catch{return {};}}
-function renderLocalRecords(){
- const rec=readLocal(), box=$('leaderboard');box.replaceChildren();
- const title=document.createElement('p');title.className='small';title.textContent='Tämän selaimen täydelliset ennätykset';box.append(title);
- const modes=[['mixed','Kaikki sekaisin'],...Array.from({length:10},(_,i)=>[String(i+1),(i+1)+':n kertotaulu'])];
- modes.forEach(([key,label])=>{const row=document.createElement('div');row.className='record-row';const l=document.createElement('span');l.textContent=label;const v=document.createElement('strong');v.textContent=rec[key]?formatTime(rec[key].timeMs):'—';row.append(l,v);box.append(row);});
-}
+function formatTime(ms){const cs=Math.floor(ms/10)%100,s=Math.floor(ms/1000)%60,m=Math.floor(ms/60000);return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+String(cs).padStart(2,'0');}
+function readLocal(){try{return JSON.parse(localStorage.getItem(recordKey)||'{}')||{};}catch{return {};}}
+function readProfile(){try{return JSON.parse(localStorage.getItem(profileKey))||{xp:0,games:0,perfect:0,bestStreak:0,achievements:[]};}catch{return {xp:0,games:0,perfect:0,bestStreak:0,achievements:[]};}}
+function saveProfile(p){try{localStorage.setItem(profileKey,JSON.stringify(p));}catch{}}
+function renderLocalRecords(){const rec=readLocal(),box=$('leaderboard');box.replaceChildren();const modes=[['mixed','Kaikki sekaisin'],...Array.from({length:10},(_,i)=>[String(i+1),(i+1)+':n kertotaulu'])];modes.forEach(([key,label])=>{const row=document.createElement('div');row.className='record-row';const l=document.createElement('span');l.textContent=label;const v=document.createElement('strong');v.textContent=rec[key]?formatTime(rec[key].timeMs):'—';row.append(l,v);box.append(row);});}
+function renderProfile(){const p=readProfile(),level=Math.min(5,Math.floor((p.xp||0)/100)),within=(p.xp||0)%100;$('levelValue').textContent=level+1;$('levelName').textContent=levelNames[level];$('xpValue').textContent=p.xp||0;$('xpFill').style.width=within+'%';$('nextLevel').textContent=(100-within)+' XP seuraavaan tasoon';const unlocked=achievementDefs.filter(a=>(p.achievements||[]).includes(a[0]));$('badges').replaceChildren();if(!unlocked.length){const s=document.createElement('span');s.className='small';s.textContent='Pelaa ensimmäinen peli avataksesi saavutuksia.';$('badges').append(s);}else unlocked.forEach(a=>{const b=document.createElement('span');b.className='badge';b.textContent='🏅 '+a[1];b.title=a[2];$('badges').append(b);});}
 function buildQuestions(){return shuffle(Array.from({length:10},()=>({a:mode==='mixed'?1+Math.floor(Math.random()*10):Number(mode),b:1+Math.floor(Math.random()*10)})));}
-function draw(){
- locked=false;entry='';$('answerDisplay').textContent='_';$('progress').textContent=`Kysymys ${index+1} / 10`;$('question').textContent=`${questions[index].a} × ${questions[index].b} = ?`;$('feedback').textContent='';$('submit').disabled=false;$('keypad').querySelectorAll('button').forEach(b=>b.disabled=false);
-}
-function tick(){
- if(!active)return;const remaining=Math.max(0,deadline-Date.now());$('clock').textContent=Math.floor(remaining/60000)+':'+String(Math.floor(remaining/1000)%60).padStart(2,'0');$('timebar').style.width=(remaining/120000*100)+'%';$('timebar').style.background=remaining<20000?'#c53636':remaining<50000?'#d99a20':'#18864b';if(remaining<=0)finish(true);
-}
-function start(){
- clearInterval(timer);name=$('playerName').value.trim().slice(0,20)||'Pelaaja';mode=$('mode').value;questions=buildQuestions();index=0;score=0;entry='';locked=false;active=true;startTime=performance.now();deadline=Date.now()+120000;$('score').textContent='0';$('gameTitle').textContent=modeName(mode);show(game);draw();tick();timer=setInterval(tick,100);
-}
-function submit(){
- if(!active||locked)return;if(!entry){$('feedback').textContent='Syötä vastaus ensin.';return;}
- locked=true;$('submit').disabled=true;$('keypad').querySelectorAll('button').forEach(b=>b.disabled=true);
- const answer=questions[index].a*questions[index].b;
- if(Number(entry)===answer){score++;$('score').textContent=score;$('feedback').textContent='Oikein! ✓';$('feedback').style.color='#18864b';}
- else{$('feedback').textContent='Väärin – oikea vastaus on '+answer+'.';$('feedback').style.color='#c53636';}
- if(index===9){setTimeout(()=>{if(active)finish(false);},450);}
- else{setTimeout(()=>{if(active){index++;draw();}},550);}
-}
-async function finish(timeout){
- if(!active)return;active=false;clearInterval(timer);elapsedMs=Math.min(120000,Math.max(0,Math.round(performance.now()-startTime)));const perfect=score===10&&!timeout;
- show(result);$('resultIcon').textContent=perfect?'🏆':'💪';$('resultTitle').textContent=timeout?'Aika loppui!':'Peli valmis!';$('finalScore').textContent=score+' / 10';$('elapsed').textContent='Suoritusaika: '+formatTime(elapsedMs);
- $('resultMessage').textContent=perfect?'Kaikki oikein! Loistava suoritus.': 'Ennätys vaatii 10/10 oikein ja alle kahden minuutin ajan. Kokeile uudelleen!';
- $('saveStatus').textContent=perfect?'Tallennetaan ennätystä…':'Tätä tulosta ei tallenneta ennätykseksi.';
- if(perfect){
-  const rec=readLocal(),old=rec[mode];if(!old||elapsedMs<old.timeMs){rec[mode]={timeMs:elapsedMs,name:name};try{localStorage.setItem(localKey,JSON.stringify(rec));}catch{}}
-  renderLocalRecords();
-  if(SUBMIT_ENDPOINT){
-   try{
-    const response=await fetch(SUBMIT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({player_name:name,mode,time_ms:elapsedMs,score:score})});
-    if(!response.ok)throw new Error('Submit failed');
-    $('saveStatus').textContent='Paikallinen ennätys tallennettu. Tulos lähetettiin yhteiseen ennätyslistaan.';
-   }catch{$('saveStatus').textContent='Paikallinen ennätys tallennettu, mutta yhteiseen listaan lähettäminen epäonnistui.';}
-  }else{$('saveStatus').textContent='Ennätys tallennettu tämän selaimen omaan listaan. Yhteinen verkkolista ei ole vielä yhdistetty.';}
- }else{$('saveStatus').textContent='Ei ennätystä: vain täydellinen 10/10 tulos hyväksytään.';}
-}
+function draw(){locked=false;entry='';$('combo').textContent=streak+'×';$('answerDisplay').textContent='_';$('progress').textContent='Kysymys '+(index+1)+' / 10';$('question').textContent=questions[index].a+' × '+questions[index].b+' = ?';$('feedback').textContent='';$('submit').disabled=false;$('keypad').querySelectorAll('button').forEach(b=>b.disabled=false);}
+function tick(){if(!active)return;const remaining=Math.max(0,deadline-Date.now());$('clock').textContent=Math.floor(remaining/60000)+':'+String(Math.floor(remaining/1000)%60).padStart(2,'0');$('timebar').style.width=(remaining/120000*100)+'%';$('timebar').style.background=remaining<20000?'#c53636':remaining<50000?'#d99a20':'#18864b';if(remaining<=0)finish(true);}
+function start(){clearInterval(timer);streak=0;bestStreak=0;earnedXP=0;name=$('playerName').value.trim().slice(0,20)||'Pelaaja';mode=$('mode').value;questions=buildQuestions();index=0;score=0;entry='';locked=false;active=true;startTime=performance.now();deadline=Date.now()+120000;$('score').textContent='0';$('combo').textContent='0×';$('gameTitle').textContent=modeName(mode);show(game);draw();tick();timer=setInterval(tick,100);}
+function submit(){if(!active||locked)return;if(!entry){$('feedback').textContent='Syötä vastaus ensin.';return;}locked=true;$('submit').disabled=true;$('keypad').querySelectorAll('button').forEach(b=>b.disabled=true);const answer=questions[index].a*questions[index].b;
+if(Number(entry)===answer){score++;streak++;bestStreak=Math.max(bestStreak,streak);const bonus=Math.min(5,Math.max(0,streak-1));earnedXP+=10+bonus;$('score').textContent=score;$('combo').textContent=streak+'×';$('feedback').textContent='Oikein! +'+(10+bonus)+' XP'+(streak>=3?' · COMBO x'+streak+'!':'');$('feedback').style.color='#18864b';$('question').classList.remove('pop');void $('question').offsetWidth;$('question').classList.add('pop');}
+else{streak=0;$('combo').textContent='0×';$('feedback').textContent='Väärin – oikea vastaus on '+answer+'.';$('feedback').style.color='#c53636';}
+if(index===9){setTimeout(()=>{if(active)finish(false);},450);}else{setTimeout(()=>{if(active){index++;draw();}},550);}}
+function finish(timeout){if(!active)return;active=false;clearInterval(timer);elapsedMs=Math.min(120000,Math.max(0,Math.round(performance.now()-startTime)));const perfect=score===10&&!timeout;const p=readProfile();p.games=(p.games||0)+1;p.bestStreak=Math.max(p.bestStreak||0,bestStreak);if(perfect)p.perfect=(p.perfect||0)+1;const dailyBonus=score>=8&&!timeout?20:0;earnedXP+=dailyBonus+(perfect?30:0);p.xp=(p.xp||0)+earnedXP;const newly=[];const unlock=(id,condition)=>{if(condition&&!p.achievements.includes(id)){p.achievements.push(id);newly.push(id);}};unlock('first',p.games>=1);unlock('perfect',perfect);unlock('combo5',bestStreak>=5);unlock('speed',perfect&&elapsedMs<30000);unlock('xp500',p.xp>=500);saveProfile(p);
+show(result);$('resultIcon').textContent=perfect?'🏆':'💪';$('resultTitle').textContent=timeout?'Aika loppui!':'Peli valmis!';$('finalScore').textContent=score+' / 10';$('elapsed').textContent='Suoritusaika: '+formatTime(elapsedMs);$('resultMessage').textContent=perfect?'Kaikki oikein! Loistava suoritus.':'Hyvä yritys — harjoittelu kasvattaa taitoa. Kokeile uudelleen!';$('xpEarned').textContent='+'+earnedXP+' XP ansaittu'+(dailyBonus?' · Päivän haaste +20 XP':'')+(perfect?' · Täydellisen pelin bonus +30 XP':'')+(newly.length?' · Uusi saavutus avattu!':'');
+if(perfect){const rec=readLocal(),old=rec[mode];if(!old||elapsedMs<old.timeMs){rec[mode]={timeMs:elapsedMs,name:name};try{localStorage.setItem(recordKey,JSON.stringify(rec));}catch{}}renderLocalRecords();$('saveStatus').textContent='Ennätys tallennettu tämän selaimen omaan listaan.';}else{$('saveStatus').textContent='Ennätys vaatii 10/10 oikein ja alle kahden minuutin ajan.';}renderProfile();}
 $('start').addEventListener('click',start);$('submit').addEventListener('click',submit);
 $('keypad').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!active||locked)return;if(b.dataset.digit!==undefined){if(entry.length<4)entry+=b.dataset.digit;}else if(b.dataset.action==='clear')entry='';else if(b.dataset.action==='back')entry=entry.slice(0,-1);$('answerDisplay').textContent=entry||'_';});
 game.addEventListener('keydown',e=>{if(!active||locked)return;if(/^[0-9]$/.test(e.key)){e.preventDefault();if(entry.length<4)entry+=e.key;$('answerDisplay').textContent=entry;}else if(e.key==='Backspace'){e.preventDefault();entry=entry.slice(0,-1);$('answerDisplay').textContent=entry||'_';}else if(e.key==='Enter'){e.preventDefault();submit();}});
-$('quit').addEventListener('click',()=>finish(false));$('again').addEventListener('click',start);$('backHome').addEventListener('click',()=>{active=false;clearInterval(timer);show(home);renderLocalRecords();});
-renderLocalRecords();
-</script>
-</body>
-</html>
+$('quit').addEventListener('click',()=>finish(false));$('again').addEventListener('click',start);$('backHome').addEventListener('click',()=>{active=false;clearInterval(timer);show(home);renderLocalRecords();renderProfile();});
+const now=new Date();$('dailyText').textContent='Päivän haaste ('+now.toLocaleDateString('fi-FI')+'): saa vähintään 8/10 oikein ja ansaitse +20 XP.';
+renderLocalRecords();renderProfile();
+</script></body></html>
